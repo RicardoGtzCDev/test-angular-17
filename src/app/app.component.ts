@@ -10,10 +10,4 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'angular-17-test';
-
-  lele = '';
-
-  lala = [
-    1, 2,
-  ];
 }
