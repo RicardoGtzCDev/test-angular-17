@@ -9,7 +9,7 @@
     "lint": "ng lint --quiet",
     "lint:fix": "ng lint --fix",
     "prepare": "husky",
-    "commit": "bunx cz"
+    "commit": "bunx cz --retry"
   },
   "config": {
     "commitizen": {
