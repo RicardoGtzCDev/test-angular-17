@@ -1,0 +1,6 @@
+#bun test
+#evaluate commit structure
+#evaluate lint
+
+
+exit 1
