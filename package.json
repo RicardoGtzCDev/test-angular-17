@@ -8,7 +8,13 @@
     "watch": "ng build --watch --configuration development",
     "lint": "ng lint --quiet",
     "lint:fix": "ng lint --fix",
-    "prepare": "husky"
+    "prepare": "husky",
+    "commit": "bunx cz"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
   },
   "private": true,
   "dependencies": {
@@ -33,9 +39,13 @@
     "@angular-eslint/template-parser": "17.2.1",
     "@angular/cli": "^17.2.1",
     "@angular/compiler-cli": "^17.2.0",
+    "@commitlint/cli": "^19.0.3",
+    "@commitlint/config-angular": "^19.0.3",
     "@typescript-eslint/eslint-plugin": "^7.1.0",
     "@typescript-eslint/parser": "^7.1.0",
     "autoprefixer": "^10.4.17",
+    "conventional-changelog-conventionalcommits": "^7.0.2",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.56.0",
     "eslint-config-airbnb-typescript": "^17.1.0",
     "eslint-config-prettier": "^9.1.0",
