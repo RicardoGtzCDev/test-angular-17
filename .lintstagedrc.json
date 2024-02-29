@@ -1,5 +1,0 @@
-{
-  "*.{ts,html}": [
-    "bun run lint"
-  ]
-}

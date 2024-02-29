@@ -1,2 +1,1 @@
-echo "commitlint"
 bunx commitlint --edit ${1}
