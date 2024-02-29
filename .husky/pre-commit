@@ -1,1 +1,2 @@
-bunx lint-staged
+echo "lint-staged"
+bunx lint-staged --verbose --debug
