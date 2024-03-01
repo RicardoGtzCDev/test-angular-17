@@ -1,2 +1,29 @@
-<p>home works!</p>
-Algo cambió
+<main class="flex flex-wrap justify-center items-start">
+  <section class="basis-full">
+    <app-user-header [email]="register.email" [user]="register.people" />
+  </section>
+  <section class="basis-full">
+    <app-course-filter
+      class="min-h-[126px] mt-0 bg-slate-300"
+      [(filteredInscriptions)]="filteredInscriptions"
+      [inscriptions]="register.inscriptions"
+    />
+  </section>
+  <section
+    class="basis-full h-auto my-10 flex flex-wrap gap-10 justify-center items-start"
+  >
+    @for (inscription of paginatedInscriptions(); track inscription.courseId) {
+      <article class="basis-[400px]">
+        <app-course-card [course]="inscription" />
+      </article>
+    } @empty {
+      <p>No hay elementos para mostrar</p>
+    }
+  </section>
+  <section class="basis-full">
+    <app-course-paginator
+      [(paginatedInscriptions)]="paginatedInscriptions"
+      [filteredInscriptions]="filteredInscriptions()"
+    />
+  </section>
+</main>

@@ -1,0 +1,17 @@
+<div class="w-full max-h-full flex place-content-evenly p-2 bg-white px-8">
+  <div class="basis-1/2 flex flex-wrap">
+    <span class="basis-auto font-semibold text-xl">Bienvenido:</span>
+    <span class="basis-auto text-xl mx-1"
+      >{{ user().name }} {{ user().lastName }}</span
+    >
+    <span class="basis-full text-sm">{{ email() }}</span>
+  </div>
+  <div class="basis-1/2 flex place-content-end">
+    <div class="inline-block bg-green-500 rounded-full w-10 h-10">
+      <span
+        class="text-white font-bold align-middle text-center ml-2 leading-10"
+        >{{ initials() }}</span
+      >
+    </div>
+  </div>
+</div>

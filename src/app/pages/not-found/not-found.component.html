@@ -1,0 +1,16 @@
+<div>
+  <main>
+    <article>
+      <p class="glitch" [attr.data-text]="message">{{ message }}</p>
+      <div class="scanlines"></div>
+    </article>
+    <section>
+      <img alt="404" src="../../../assets/images/404-page-not-found.svg" />
+      <article>
+        <button [routerLink]="['', 'home']" mat-raised-button>
+          Volver al Inicio
+        </button>
+      </article>
+    </section>
+  </main>
+</div>

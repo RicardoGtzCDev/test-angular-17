@@ -1,0 +1,85 @@
+<div
+  class="w-full max-h-full flex flex-wrap place-content-center md:place-content-start px-10 gap-10"
+>
+  <div class="basis-40 h-28 flex flex-wrap place-content-center">
+    <span class="basis-full text-sm m-1">Ordenar por:</span>
+    <form class="basis-full">
+      <mat-form-field class="px-2">
+        <mat-select
+          [formControl]="selectedOrder"
+          (selectionChange)="orderByAndEmit($event.value)"
+        >
+          <mat-option *ngFor="let option of orderByOptions" [value]="option">
+            {{ option }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </form>
+  </div>
+  <div class="basis-[506px] h-28 flex flex-wrap place-content-center">
+    <span class="basis-48 sm:basis-full text-sm m-1 ml-6 text-left"
+      >Filtrar por:</span
+    >
+    <div class="basis-full flex flex-wrap gap-3 place-content-center">
+      <form class="basis-auto flex flex-wrap">
+        <mat-form-field class="px-2">
+          <mat-label class="text-xs">Categoría</mat-label>
+          <mat-select
+            [formControl]="selectedSector"
+            (selectionChange)="filterByAndEmit()"
+          >
+            <mat-option *ngFor="let option of sectorOptions()" [value]="option">
+              {{ option }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </form>
+      <form class="basis-auto flex flex-wrap">
+        <mat-form-field class="px-2">
+          <mat-label class="text-xs">Progreso</mat-label>
+          <mat-select
+            [formControl]="selectedProgress"
+            (selectionChange)="filterByAndEmit()"
+          >
+            <mat-option
+              *ngFor="let option of progressOptions()"
+              [value]="option"
+            >
+              {{ option }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </form>
+    </div>
+  </div>
+  <div class="basis-40 h-28 flex flex-wrap place-content-center">
+    <span class="basis-full text-sm m-1">Buscar</span>
+    <form class="basis-full flex">
+      <mat-form-field class="basis-auto">
+        <input
+          type="text"
+          [formControl]="searchName"
+          matInput
+          placeholder="Nombre del curso"
+        />
+      </mat-form-field>
+      <button
+        class="basis-auto active:scale-75 transition-transform"
+        (click)="searchByNameAndEmit()"
+      >
+        <mat-icon class="ml-4 mb-4" aria-hidden="false" matPrefix>
+          search
+        </mat-icon>
+      </button>
+    </form>
+  </div>
+  <div class="basis-40 h-28 flex flex-wrap left-0 place-content-center mt-1">
+    <button
+      class="basis-full h-10 bg-green-500 rounded-md text-white font-bold text-base px-4 text-center active:scale-75 transition-transform"
+      type="button"
+      (click)="resetForms()"
+    >
+      <span>Restablecer</span>
+    </button>
+  </div>
+</div>
